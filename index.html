@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
-    <title>Alien in disguise</title>
+    <title>ᴀʟɪᴇɴ ɪɴ ᴅɪsɢᴜɪsᴇ</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         body {
@@ -436,13 +436,14 @@
             border: 2px solid white;
             background: transparent;
             font-family: 'Roboto', sans-serif;
-            width: 250px;
-            height: 50px;
-            font-size: 2em;
+            width: 100%;
+            font-size: max(40px, calc(1vw + 1vh + 1vmin));
             border-radius: 10px;
-            opacity: .5;
+            opacity: .6;
             margin: auto;
             transition: .3s;
+            padding: 1vh 1vw;
+            filter: drop-shadow(30px 25px 4px #00000075);
         }
 
         button:hover {
@@ -459,26 +460,28 @@
         }
 
         .container {
-            max-width: 1250px;
+            max-width: 500px;
             margin: auto;
             text-align: center;
             padding: 5vh 5vw;
         }
 
         .image {
-            max-width: 20vw;
-            min-width: 200px;
+            max-width: 100%;
             display: block;
             margin: 0 auto;
-            opacity: .5;
+            opacity: .6;
+            width: 500px;
+            filter: drop-shadow(30px 25px 4px #00000075);
         }
 
         .svg-icon {
             position: relative;
             top: .125em;
             flex-shrink: 0;
-            height: 1em;
-            width: 1em;
+            height: auto;
+            max-width: max(40px, calc(1vw + 1vh + 1vmin));
+            width: inherit;
             fill: white;
             transition: fill .3s;
         }
