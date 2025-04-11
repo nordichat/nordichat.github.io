@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blurred Background Example</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      height: 100%;
+      width: 100%;
+      background-color: hsla(200, 40%, 30%, .4);
+      background-image:
+        url('https://78.media.tumblr.com/cae86e76225a25b17332dfc9cf8b1121/tumblr_p7n8kqHMuD1uy4lhuo1_540.png'),
+        url('https://78.media.tumblr.com/66445d34fe560351d474af69ef3f2fb0/tumblr_p7n908E1Jb1uy4lhuo1_1280.png'),
+        url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
+        url('https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png'),
+        url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
+      background-repeat: repeat-x;
+      background-position:
+        0 20%,
+        0 100%,
+        0 50%,
+        0 100%,
+        0 0;
+      background-size:
+        2500px,
+        800px,
+        500px 200px,
+        1000px,
+        400px 260px;
+      animation: 50s para infinite linear;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      filter: none;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: hsla(200, 40%, 30%, .4);
+      background-image:
+        url('https://78.media.tumblr.com/cae86e76225a25b17332dfc9cf8b1121/tumblr_p7n8kqHMuD1uy4lhuo1_540.png'),
+        url('https://78.media.tumblr.com/66445d34fe560351d474af69ef3f2fb0/tumblr_p7n908E1Jb1uy4lhuo1_1280.png'),
+        url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
+        url('https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png'),
+        url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
+      background-repeat: repeat-x;
+      background-position:
+        0 20%,
+        0 100%,
+        0 50%,
+        0 100%,
+        0 0;
+      background-size:
+        2500px,
+        800px,
+        500px 200px,
+        1000px,
+        400px 260px;
+      animation: 50s para infinite linear;
+      z-index: -1;
+      filter: blur(5px);
+    }
+
+    @keyframes para {
+      100% {
+        background-position:
+          -5000px 20%,
+          -800px 95%,
+          500px 50%,
+          1000px 100%,
+          400px 0;
+      }
+    }
+
+    body {
+      margin: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      background: rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content {
+      text-align: center;
+      padding: 40px 30px;
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+      position: relative;
+      z-index: 1;
+    }
+
+    .content .quote {
+      font-family: 'Palatino', 'Palatino Linotype', 'Book Antiqua', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      line-height: 1.6;
+      color: #dcdcdc;
+      margin-top: 20px;
+      padding: 10px 15px;
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+li {
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+li span {
+  display: block;
+  font-size: 4.5rem;
+}
+
+@media all and (max-width: 768px) {
+  h1 {
+    font-size: calc(1.5rem * var(--smaller));
+  }
+  
+  li {
+    font-size: calc(1.125rem * var(--smaller));
+  }
+  
+  li span {
+    font-size: calc(3.375rem * var(--smaller));
+  }
+}
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <div id="countdown">
+      <ul>
+        <li><span id="days"></span>dagar</li>
+        <li><span id="hours"></span>timmar</li>
+        <li><span id="minutes"></span>minuter</li>
+        <li><span id="seconds"></span>sekunder</li>
+      </ul>
+    </div>
+    <h1>Welcome to the Blurred Background Page</h1>
+    <p class="quote">"Livet är vackert, brutalt, och mitt."</p>
+  </div>
+  <script>
+    const countdownDate = new Date("2025-04-14T13:00:00Z").getTime(); // 15:00 CET
+
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+
+      if (distance < 0) {
+        document.querySelector(".timer").innerHTML = "<span>It's here!</span>";
+      }
+    };
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
