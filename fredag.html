@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vacker värld</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --font-size-base: 1rem;
+      --font-size-large: 1.5rem;
+      --font-size-xlarge: 4.5rem;
+      --padding-base: 1em;
+      --padding-large: 2em;
+      --box-radius: 12px;
+    }
+
+    html {
+      height: 100%;
+      width: 100%;
+      background-color: hsla(200, 40%, 30%, 0.4);
+      background-image:
+        url('https://78.media.tumblr.com/cae86e76225a25b17332dfc9cf8b1121/tumblr_p7n8kqHMuD1uy4lhuo1_540.png'),
+        url('https://78.media.tumblr.com/66445d34fe560351d474af69ef3f2fb0/tumblr_p7n908E1Jb1uy4lhuo1_1280.png'),
+        url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
+        url('https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png'),
+        url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
+      background-repeat: repeat-x;
+      background-position: 0 20%, 0 100%, 0 50%, 0 100%, 0 0;
+      background-size: 2500px, 800px, 500px 200px, 1000px, 400px 260px;
+      animation: 50s para infinite linear;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      filter: none;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: hsla(200, 40%, 30%, 0.4);
+      background-image:
+        url('https://78.media.tumblr.com/cae86e76225a25b17332dfc9cf8b1121/tumblr_p7n8kqHMuD1uy4lhuo1_540.png'),
+        url('https://78.media.tumblr.com/66445d34fe560351d474af69ef3f2fb0/tumblr_p7n908E1Jb1uy4lhuo1_1280.png'),
+        url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
+        url('https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png'),
+        url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
+      background-repeat: repeat-x;
+      background-position: 0 20%, 0 100%, 0 50%, 0 100%, 0 0;
+      background-size: 2500px, 800px, 500px 200px, 1000px, 400px 260px;
+      animation: 50s para infinite linear;
+      z-index: -1;
+      filter: blur(5px);
+    }
+
+    @keyframes para {
+      100% {
+        background-position: -5000px 20%, -800px 95%, 500px 50%, 1000px 100%, 400px 0;
+      }
+    }
+
+    body {
+      margin: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      background: rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: var(--padding-base);
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: var(--box-radius);
+      position: relative;
+      z-index: 1;
+      max-width: 80%;
+    }
+
+    .content .quote {
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-size: calc(var(--font-size-large) * 1.2);
+      font-weight: 400;
+      color: #e0e0e0;
+      max-width: 80%;
+      margin: 0;
+      margin-top: var(--padding-base);
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: var(--padding-base);
+      color: #e0e0e0;
+    }
+
+    li {
+      display: inline-block;
+      font-size: var(--font-size-large);
+      text-transform: uppercase;
+    }
+
+    li span {
+      display: block;
+      font-size: var(--font-size-xlarge);
+    }
+
+    .colon {
+      display: inline-block;
+      font-size: var(--font-size-xlarge);
+      text-align: center;
+      margin: 0 -5px;
+    }
+
+    @media all and (max-width: 768px) {
+
+      :root {
+        --font-size-base: 0.75rem;
+        --font-size-large: 1rem;
+        --font-size-xlarge: 2rem;
+        --padding-base: 0.5em;
+        --padding-large: 1em;
+      }
+
+      h1 {
+        font-size: calc(1.5rem * 0.75);
+      }
+
+      #countdown li span {
+        font-size: var(--font-size-xlarge);
+      }
+
+      #countdown li {
+        font-size: var(--font-size-base);
+      }
+
+      .colon {
+        font-size: var(--font-size-xlarge);
+      }
+
+      .quote {
+        font-size: calc(var(--font-size-large) * 1.5);
+        font-weight: 300;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <div id="countdown">
+      <ul>
+        <li><span id="days"></span>dagar</li>
+        <span class="colon">:</span>
+        <li><span id="hours"></span>timmar</li>
+        <span class="colon">:</span>
+        <li><span id="minutes"></span>minuter</li>
+        <span class="colon">:</span>
+        <li><span id="seconds"></span>sekunder</li>
+      </ul>
+    </div>
+    <p class="quote">...tills helgen är här!</p>
+  </div>
+  <script>
+    const countdownDate = new Date("2025-04-11T16:00:00Z").getTime();
+
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+
+      if (distance < 0) {
+        document.querySelector(".timer").innerHTML = "<span>It's here!</span>";
+      }
+    };
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+
+</html>
