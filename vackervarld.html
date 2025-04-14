@@ -167,6 +167,23 @@
         font-weight: 300;
       }
     }
+
+    .button {
+      display: inline-block;
+      margin-top: var(--padding-base);
+      padding: var(--padding-base) var(--padding-large);
+      font-size: var(--font-size-large);
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      background-color: #228B22; /* Forest green */
+      border-radius: var(--box-radius);
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #196619; /* Darker forest green */
+    }
   </style>
 </head>
 
@@ -183,7 +200,7 @@
         <li><span id="seconds"></span>sekunder</li>
       </ul>
     </div>
-    <p class="quote">...tills QR-koden leder dig till <em>"något som gör världen vacker"</em></p>
+    <a href="https://pb.envs.net/?941e36f35e9c7b63#HA3GnN4RVFNedGvLKmUzmY6kRrhCkzmiK6oDFL1dBTKQ" class="button">Utforska något vackert</a>
   </div>
   <script>
     const countdownDate = new Date("2025-04-14T14:00:00Z").getTime(); // 15:00 CET
